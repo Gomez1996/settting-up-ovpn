@@ -66,7 +66,7 @@ Copy code
 
 bash
 Copy code
-openvpn --genkey --secret ta.key
+
 Step 7: Copy the Files to OpenVPN Directory
 Copy the CA certificate, server certificate, private key, and DH parameters to the OpenVPN directory:
 
@@ -76,7 +76,7 @@ sudo cp ~/openvpn-ca/pki/ca.crt /etc/openvpn/
 sudo cp ~/openvpn-ca/pki/issued/server.crt /etc/openvpn/
 sudo cp ~/openvpn-ca/pki/private/server.key /etc/openvpn/
 sudo cp ~/openvpn-ca/pki/dh.pem /etc/openvpn/
-sudo cp ~/openvpn-ca/ta.key /etc/openvpn/  # If you generated this
+
 Step 8: Configure the OpenVPN Server
 Copy the sample server configuration file to the OpenVPN directory:
 
@@ -112,9 +112,11 @@ Configure UFW to allow traffic to your OpenVPN:
 bash
 Copy code
 sudo ufw allow OpenSSH
-sudo ufw allow 1194/udp
+sudo ufw allow 1194/tcp
 sudo ufw enable
-Configure UFW to allow packet forwarding:
+Configure UFW to allow packet forwarding
+
+
 
 bash
 Copy code
