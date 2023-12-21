@@ -82,8 +82,8 @@ Copy the sample server configuration file to the OpenVPN directory:
 
 bash
 Copy code
-sudo cp /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz /etc/openvpn/
-sudo gzip -d /etc/openvpn/server.conf.gz
+sudo cp /usr/share/doc/openvpn/examples/sample-config-files/server.conf /etc/openvpn/
+
 Edit the server configuration:
 
 bash
